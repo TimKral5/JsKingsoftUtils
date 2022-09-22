@@ -41,7 +41,7 @@
          * 
          * @returns {string}
          */
-        eType() {
+        type() {
             if (this.element != undefined)
                 return this.element.nodeName;
             return null;
@@ -53,13 +53,13 @@
         element;
 
         /**
-         * If value is undefined, the value of the Attribute gets returned (string).
-         * Is value a string, the value of the Attribute will be set to it (returns the ).
-         * If value is 0 (number), the Attribute will be removed.
          * @param {string} id
-         * @param {string | number | undefined} value 
-         * @returns {JqElement | string | undefined}
-         */
+         * @returns {string|undefined}
+         *//**
+        * @param {string} id
+        * @param {string} value 
+        * @returns {JqElement|undefined}
+        */
         attr(id, value) {
             if (typeof id != "string") {
                 return undefined;
@@ -93,7 +93,7 @@
             var elements = this.element.querySelectorAll(query);
             var results = [];
             elements.forEach(x => { results.push(new JqElement$1(x)); });
-            return new JqElementCollection();
+            return new JqElementCollection(results);
         }
 
         /**
@@ -104,10 +104,19 @@
         }
 
         /**
-         * create a new Element inside
-         * @param {{tag:string,attributes:{[key:string]:string},innerHTML: string} param0
-         */
-        create({ tag="div", attributes={}, innerHTML=""}) {
+         * create a new Element inside the current
+         * @param {{tag:string,attributes:{[key:string]:string},innerHTML:string, str:string}} arg
+         * @returns {JqElement} the new element
+         *//**
+        * @param {string} arg
+        * @returns {undefined} the new element
+        */
+        create(arg) {
+            if (typeof arg == "string") {
+                this.element.append(arg);
+                return undefined;
+            }
+            var { tag = "div", attributes = {}, innerHTML = "", str = "" } = arg;
             var e = document.createElement(tag);
             for (var key in attributes) {
                 e.setAttribute(key, attributes[key]);
@@ -115,16 +124,57 @@
             e.innerHTML = innerHTML;
 
             this.element.appendChild(e);
+            return new JqElement$1(e);
+        }
+
+        /**
+         * removes the 
+         * @param {string} query
+         * @returns {this}
+         */
+        remove(query) {
+            document.removeChild(this.element.querySelectorAll(query));
+            return this;
         }
 
         /**
          * 
          * @param {string} event 
          * @param {(this:HTMLElement,ev:Event)=>void} func
-         * @param {(this:HTMLElement)=>void2} func 
+         * @returns {JqElement}
          */
         on(event, func) {
             this.element.addEventListener(event, func);
+            return this;
+        }
+
+        /**
+         * 
+         * @param {string} html 
+         */
+        innerHTML(html) {
+            this.element.innerHTML = html;
+        }
+
+        /**
+         * @param {string} prop
+         * @returns {string|undefined}
+         *//**
+        * @param {string} prop
+        * @param {string} value 
+        * @returns {JqElement|undefined}
+        */
+        css(prop, value) {
+            if (typeof prop != "string") {
+                return undefined;
+            }
+            if (typeof value == "undefined") {
+                return this.element.style[prop];
+            }
+            else {
+                this.element.style[prop] = value;
+                return this;
+            }
         }
 
         static body = JqElement$1.jq("body");
@@ -157,11 +207,110 @@
     const JqElement = JqElement$1;
     const jq$1 = JqElement$1.jq;
 
-    var main$1 = /*#__PURE__*/Object.freeze({
+    var main$2 = /*#__PURE__*/Object.freeze({
         __proto__: null,
         JqElement: JqElement,
         jq: jq$1
     });
+
+    const http = {
+        get(url) {
+            var req = new XMLHttpRequest();
+            req.open("GET", url);
+            req.send();
+            return req.responseText;
+        },
+
+        /**
+         * 
+         * @param {string} url 
+         * @param {{[key:string]:string}} body 
+         * @returns 
+         */
+        post(url, body) {
+            var req = new XMLHttpRequest();
+            req.open("POST", url);
+            req.setRequestHeader("Content-Type", "application/json");
+            req.send(JSON.stringify(body));
+            return req.responseText;
+        }
+    };
+
+    var loaded_css = [];
+    var loaded_js = [];
+
+    const lazy = {
+        addCSS(filename) {
+            if (loaded_css.indexOf(filename) != -1)
+                return;
+            var head = document.getElementsByTagName('head')[0];
+
+            var style = document.createElement('link');
+            style.href = filename;
+            style.type = 'text/css';
+            style.rel = 'stylesheet';
+            head.appendChild(style);
+
+            loaded_css.push(filename);
+        },
+
+        addScript(filename) {
+            if (loaded_js.indexOf(filename) != -1)
+                return;
+
+            var head = document.getElementsByTagName('head')[0];
+
+            var script = document.createElement('script');
+            script.src = filename;
+            script.type = 'text/javascript';
+
+            head.insertBefore(script, document.getElementsByTagName("script")[0]);
+
+            loaded_js.push(filename);
+        }
+    };
+
+    class WebClient {
+        static http_get = http.get;
+        static http_post = http.post;
+        static lazy_css = lazy.addCSS;
+        static lazy_js = lazy.addScript;
+    }
+
+    var main$1 = /*#__PURE__*/Object.freeze({
+        __proto__: null,
+        WebClient: WebClient
+    });
+
+    /*
+    HQuery:
+    - Parent-Attribute: 
+        [data-hq-parent]: moves the element into all elements, matching the entered query
+
+    - Tab-System:
+        * [data-hq-tablink]
+        * [data-hq-tabgroup]
+        * [data-hq-tab]
+    */
+
+
+    var tablinks;
+
+    function setActiveTab(link) {
+        var tabgroups = JqElement.body.children("[data-hq-tabgroup]");
+        tabgroups.forEach(_e => {
+            var args = link.split("/");
+            if (_e.attr("data-hq-tabgroup") == args[0]) {
+                var tabs = _e.children("[data-hq-tab]");
+                tabs.forEach(t => t.parent().attr("data-hq-tabgroup") == args[0] ? t.attr("hidden", "") : null);
+                tabs.forEach(tab => {
+                    if (_e.attr("data-hq-tabgroup") == args[0] && tab.attr("data-hq-tab") == args[1]) {
+                        tab.attr("hidden", 0);
+                    }
+                });
+            }
+        });
+    }
 
     function setup() {
         // Parent Attribute
@@ -171,30 +320,32 @@
             var parent = document.querySelector(attr);
             parent.appendChild(e);
         });
-        
-        // Tab-System
-        var tablinks = JqElement.body.children("[data-hq-tablink]");
-        tablinks.forEach(e => e.element.onclick = () => {
-            var tabgroups = JqElement.body.children("[data-hq-tabgroup]");
-            tabgroups.forEach(_e => {
-                var args = e.attr("data-hq-tablink").split("/");
-                if (_e.attr("data-hq-tabgroup") == args[1]) {
-                    var tabs = _e.children("[data-hq-tab]");
-                    tabs.forEach(tab => {
-                        if (tab.attr("data-hq-tab") == args[2]) {
-                            tabs.forEach(t => t.attr("hidden", ""));
-                            tab.attr("hidden", 0);
-                        }
-                    });
-                }
-            });
-        });
 
+        // Tab-System
+        tablinks = JqElement.body.children("[data-hq-tablink]");
+        tablinks.forEach(e => e.element.onclick = () => setActiveTab(e.attr("data-hq-tablink")));
+
+        // lazy-load
+        jq$1("html").children("[data-hq-lazy]").forEach(x => {
+            x.attr("data-hq-lazy");
+            WebClient.lazy_js();
+        });
+    }
+
+    function loadHash() {
+        var paths = 
+            document.location.hash.replace("#","")
+            .split(";");
+        paths.forEach(element => {
+            setActiveTab(element);
+        });
     }
 
     var _hquery = /*#__PURE__*/Object.freeze({
         __proto__: null,
-        setup: setup
+        setActiveTab: setActiveTab,
+        setup: setup,
+        loadHash: loadHash
     });
 
     /**t
@@ -250,8 +401,9 @@
     const hquery = _hquery;
 
     exports.hquery = hquery;
-    exports.jquery = main$1;
+    exports.jquery = main$2;
     exports.math = main;
+    exports.web = main$1;
 
     Object.defineProperty(exports, '__esModule', { value: true });
 
