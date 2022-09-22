@@ -1,0 +1,1 @@
+./node_modules/.bin/jsdoc ./build/bundle.js

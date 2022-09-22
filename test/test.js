@@ -1,6 +1,4 @@
-console.log(kingsoft);
-console.log(kingsoft.jquery.jq("#lol"));
-console.log(kingsoft.jquery.JqElement.html);
-console.log(kingsoft.jquery.jq("html"));
 
-kingsoft.jquery.jq("body").create({tag: "div", attributes: {test: "lol"}, innerHTML: "<h1>lol</h1>"});
+kingsoft.jquery.jq("body").create({tag: "h1", innerHTML: "Hello World!"});
+
+kingsoft.hquery.setActiveTab("test/home");

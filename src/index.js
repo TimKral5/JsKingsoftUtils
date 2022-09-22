@@ -8,3 +8,4 @@ import * as _jquery from './jquery/main';
 export const hquery = _hquery;
 export * as jquery from './jquery/main';
 export * as math from './math/main';
+export * as web from './web/main';

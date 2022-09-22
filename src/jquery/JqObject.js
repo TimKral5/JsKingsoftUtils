@@ -35,7 +35,7 @@ export class JqElement {
      * 
      * @returns {string}
      */
-    eType() {
+    type() {
         if (this.element != undefined)
             return this.element.nodeName;
         return null;
@@ -47,13 +47,13 @@ export class JqElement {
     element;
 
     /**
-     * If value is undefined, the value of the Attribute gets returned (string).
-     * Is value a string, the value of the Attribute will be set to it (returns the ).
-     * If value is 0 (number), the Attribute will be removed.
      * @param {string} id
-     * @param {string | number | undefined} value 
-     * @returns {JqElement | string | undefined}
-     */
+     * @returns {string|undefined}
+     *//**
+    * @param {string} id
+    * @param {string} value 
+    * @returns {JqElement|undefined}
+    */
     attr(id, value) {
         if (typeof id != "string") {
             return undefined;
@@ -87,7 +87,7 @@ export class JqElement {
         var elements = this.element.querySelectorAll(query);
         var results = [];
         elements.forEach(x => { results.push(new JqElement(x)) });
-        return new JqElementCollection();
+        return new JqElementCollection(results);
     }
 
     /**
@@ -98,10 +98,19 @@ export class JqElement {
     }
 
     /**
-     * create a new Element inside
-     * @param {{tag:string,attributes:{[key:string]:string},innerHTML: string} param0
-     */
-    create({ tag="div", attributes={}, innerHTML=""}) {
+     * create a new Element inside the current
+     * @param {{tag:string,attributes:{[key:string]:string},innerHTML:string, str:string}} arg
+     * @returns {JqElement} the new element
+     *//**
+    * @param {string} arg
+    * @returns {undefined} the new element
+    */
+    create(arg) {
+        if (typeof arg == "string") {
+            this.element.append(arg);
+            return undefined;
+        }
+        var { tag = "div", attributes = {}, innerHTML = "", str = "" } = arg;
         var e = document.createElement(tag);
         for (var key in attributes) {
             e.setAttribute(key, attributes[key]);
@@ -109,16 +118,57 @@ export class JqElement {
         e.innerHTML = innerHTML;
 
         this.element.appendChild(e);
+        return new JqElement(e);
+    }
+
+    /**
+     * removes the 
+     * @param {string} query
+     * @returns {this}
+     */
+    remove(query) {
+        document.removeChild(this.element.querySelectorAll(query));
+        return this;
     }
 
     /**
      * 
      * @param {string} event 
      * @param {(this:HTMLElement,ev:Event)=>void} func
-     * @param {(this:HTMLElement)=>void2} func 
+     * @returns {JqElement}
      */
     on(event, func) {
         this.element.addEventListener(event, func);
+        return this;
+    }
+
+    /**
+     * 
+     * @param {string} html 
+     */
+    innerHTML(html) {
+        this.element.innerHTML = html;
+    }
+
+    /**
+     * @param {string} prop
+     * @returns {string|undefined}
+     *//**
+    * @param {string} prop
+    * @param {string} value 
+    * @returns {JqElement|undefined}
+    */
+    css(prop, value) {
+        if (typeof prop != "string") {
+            return undefined;
+        }
+        if (typeof value == "undefined") {
+            return this.element.style[prop];
+        }
+        else {
+            this.element.style[prop] = value;
+            return this;
+        }
     }
 
     static body = JqElement.jq("body");

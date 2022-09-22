@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="../build/jquery.js" defer></script>
-    <script src="test.js" defer></script>
+    <script src="../build/bundle.js" defer></script>
 </head>
 <body>
-    <style>
-        #test {
-            background-color: grey;
-        }
-    </style>
-    <h1 data-hq-parent="#test">Outside</h1>
-    <div id="test"/>
+    <button>Load some js</button>
+
+    <script>
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", () => kingsoft.web.WebClient.lazy_js("test.js"));
+        
+    </script>
 </body>
 </html>
