@@ -240,8 +240,8 @@
     var loaded_js = [];
 
     const lazy = {
-        addCSS(filename) {
-            if (loaded_css.indexOf(filename) != -1)
+        addCSS(filename, ignoreIfLoaded = true) {
+            if (ignoreIfLoaded && loaded_css.indexOf(filename) != -1)
                 return;
             var head = document.getElementsByTagName('head')[0];
 
@@ -254,8 +254,8 @@
             loaded_css.push(filename);
         },
 
-        addScript(filename) {
-            if (loaded_js.indexOf(filename) != -1)
+        addScript(filename, ignoreIfLoaded = true) {
+            if (ignoreIfLoaded && loaded_js.indexOf(filename) != -1)
                 return;
 
             var head = document.getElementsByTagName('head')[0];

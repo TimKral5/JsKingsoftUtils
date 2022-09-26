@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": ".\\compile.bat",
-    "start": ""
+    "build": ".\\compile.bat"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jsdoc": "^3.6.11"
+    "jsdoc": "^3.6.11",
+    "rollup-plugin-css-only": "^3.1.0"
   }
 }

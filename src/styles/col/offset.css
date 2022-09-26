@@ -1,0 +1,746 @@
+/* #region default */
+.col-offset-0 {
+    position: relative;
+    left: 0px;
+}
+
+.col-offset-1 {
+    position: relative;
+    left: 5%;
+}
+
+.col-offset-2 {
+    position: relative;
+    left: 10%;
+}
+
+.col-offset-3 {
+    position: relative;
+    left: 15%;
+}
+
+.col-offset-4 {
+    position: relative;
+    left: 20%;
+}
+
+.col-offset-5 {
+    position: relative;
+    left: 25%;
+}
+
+.col-offset-6 {
+    position: relative;
+    left: 30%;
+}
+
+.col-offset-7 {
+    position: relative;
+    left: 35%;
+}
+
+.col-offset-8 {
+    position: relative;
+    left: 40%;
+}
+
+.col-offset-9 {
+    position: relative;
+    left: 45%;
+}
+
+.col-offset-10 {
+    position: relative;
+    left: 50%;
+}
+
+.col-offset-11 {
+    position: relative;
+    left: 55%;
+}
+
+.col-offset-12 {
+    position: relative;
+    left: 60%;
+}
+
+.col-offset-13 {
+    position: relative;
+    left: 65%;
+}
+
+.col-offset-14 {
+    position: relative;
+    left: 70%;
+}
+
+.col-offset-15 {
+    position: relative;
+    left: 75%;
+}
+
+.col-offset-16 {
+    position: relative;
+    left: 80%;
+}
+
+.col-offset-17 {
+    position: relative;
+    left: 85%;
+}
+
+.col-offset-18 {
+    position: relative;
+    left: 90%;
+}
+
+.col-offset-19 {
+    position: relative;
+    left: 95%;
+}
+
+.col-offset-20 {
+    position: relative;
+    left: 100%;
+}
+
+/* #endregion */
+
+@media screen and (min-width: 320px) {
+    .col-ms-offset-0 {
+        position: relative;
+        left: 0px;
+    }
+
+    .col-ms-offset-1 {
+        position: relative;
+        left: 5%;
+    }
+
+    .col-ms-offset-2 {
+        position: relative;
+        left: 10%;
+    }
+
+    .col-ms-offset-3 {
+        position: relative;
+        left: 15%;
+    }
+
+    .col-ms-offset-4 {
+        position: relative;
+        left: 20%;
+    }
+
+    .col-ms-offset-5 {
+        position: relative;
+        left: 25%;
+    }
+
+    .col-ms-offset-6 {
+        position: relative;
+        left: 30%;
+    }
+
+    .col-ms-offset-7 {
+        position: relative;
+        left: 35%;
+    }
+
+    .col-ms-offset-8 {
+        position: relative;
+        left: 40%;
+    }
+
+    .col-ms-offset-9 {
+        position: relative;
+        left: 45%;
+    }
+
+    .col-ms-offset-10 {
+        position: relative;
+        left: 50%;
+    }
+
+    .col-ms-offset-11 {
+        position: relative;
+        left: 55%;
+    }
+
+    .col-ms-offset-12 {
+        position: relative;
+        left: 60%;
+    }
+
+    .col-ms-offset-13 {
+        position: relative;
+        left: 65%;
+    }
+
+    .col-ms-offset-14 {
+        position: relative;
+        left: 70%;
+    }
+
+    .col-ms-offset-15 {
+        position: relative;
+        left: 75%;
+    }
+
+    .col-ms-offset-16 {
+        position: relative;
+        left: 80%;
+    }
+
+    .col-ms-offset-17 {
+        position: relative;
+        left: 85%;
+    }
+
+    .col-ms-offset-18 {
+        position: relative;
+        left: 90%;
+    }
+
+    .col-ms-offset-19 {
+        position: relative;
+        left: 95%;
+    }
+
+    .col-ms-offset-20 {
+        position: relative;
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .col-mm-offset-0 {
+        position: relative;
+        left: 0px;
+    }
+
+    .col-mm-offset-1 {
+        position: relative;
+        left: 5%;
+    }
+
+    .col-mm-offset-2 {
+        position: relative;
+        left: 10%;
+    }
+
+    .col-mm-offset-3 {
+        position: relative;
+        left: 15%;
+    }
+
+    .col-mm-offset-4 {
+        position: relative;
+        left: 20%;
+    }
+
+    .col-mm-offset-5 {
+        position: relative;
+        left: 25%;
+    }
+
+    .col-mm-offset-6 {
+        position: relative;
+        left: 30%;
+    }
+
+    .col-mm-offset-7 {
+        position: relative;
+        left: 35%;
+    }
+
+    .col-mm-offset-8 {
+        position: relative;
+        left: 40%;
+    }
+
+    .col-mm-offset-9 {
+        position: relative;
+        left: 45%;
+    }
+
+    .col-mm-offset-10 {
+        position: relative;
+        left: 50%;
+    }
+
+    .col-mm-offset-11 {
+        position: relative;
+        left: 55%;
+    }
+
+    .col-mm-offset-12 {
+        position: relative;
+        left: 60%;
+    }
+
+    .col-mm-offset-13 {
+        position: relative;
+        left: 65%;
+    }
+
+    .col-mm-offset-14 {
+        position: relative;
+        left: 70%;
+    }
+
+    .col-mm-offset-15 {
+        position: relative;
+        left: 75%;
+    }
+
+    .col-mm-offset-16 {
+        position: relative;
+        left: 80%;
+    }
+
+    .col-mm-offset-17 {
+        position: relative;
+        left: 85%;
+    }
+
+    .col-mm-offset-18 {
+        position: relative;
+        left: 90%;
+    }
+
+    .col-mm-offset-19 {
+        position: relative;
+        left: 95%;
+    }
+
+    .col-mm-offset-20 {
+        position: relative;
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 425px) {
+    .col-ml-offset-0 {
+        position: relative;
+        left: 0px;
+    }
+
+    .col-ml-offset-1 {
+        position: relative;
+        left: 5%;
+    }
+
+    .col-ml-offset-2 {
+        position: relative;
+        left: 10%;
+    }
+
+    .col-ml-offset-3 {
+        position: relative;
+        left: 15%;
+    }
+
+    .col-ml-offset-4 {
+        position: relative;
+        left: 20%;
+    }
+
+    .col-ml-offset-5 {
+        position: relative;
+        left: 25%;
+    }
+
+    .col-ml-offset-6 {
+        position: relative;
+        left: 30%;
+    }
+
+    .col-ml-offset-7 {
+        position: relative;
+        left: 35%;
+    }
+
+    .col-ml-offset-8 {
+        position: relative;
+        left: 40%;
+    }
+
+    .col-ml-offset-9 {
+        position: relative;
+        left: 45%;
+    }
+
+    .col-ml-offset-10 {
+        position: relative;
+        left: 50%;
+    }
+
+    .col-ml-offset-11 {
+        position: relative;
+        left: 55%;
+    }
+
+    .col-ml-offset-12 {
+        position: relative;
+        left: 60%;
+    }
+
+    .col-ml-offset-13 {
+        position: relative;
+        left: 65%;
+    }
+
+    .col-ml-offset-14 {
+        position: relative;
+        left: 70%;
+    }
+
+    .col-ml-offset-15 {
+        position: relative;
+        left: 75%;
+    }
+
+    .col-ml-offset-16 {
+        position: relative;
+        left: 80%;
+    }
+
+    .col-ml-offset-17 {
+        position: relative;
+        left: 85%;
+    }
+
+    .col-ml-offset-18 {
+        position: relative;
+        left: 90%;
+    }
+
+    .col-ml-offset-19 {
+        position: relative;
+        left: 95%;
+    }
+
+    .col-ml-offset-20 {
+        position: relative;
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .col-tb-offset-0 {
+        position: relative;
+        left: 0px;
+    }
+    .col-tb-offset-1 {
+        position: relative;
+        left: 5%;
+    }
+
+    .col-tb-offset-2 {
+        position: relative;
+        left: 10%;
+    }
+
+    .col-tb-offset-3 {
+        position: relative;
+        left: 15%;
+    }
+
+    .col-tb-offset-4 {
+        position: relative;
+        left: 20%;
+    }
+
+    .col-tb-offset-5 {
+        position: relative;
+        left: 25%;
+    }
+
+    .col-tb-offset-6 {
+        position: relative;
+        left: 30%;
+    }
+
+    .col-tb-offset-7 {
+        position: relative;
+        left: 35%;
+    }
+
+    .col-tb-offset-8 {
+        position: relative;
+        left: 40%;
+    }
+
+    .col-tb-offset-9 {
+        position: relative;
+        left: 45%;
+    }
+
+    .col-tb-offset-10 {
+        position: relative;
+        left: 50%;
+    }
+
+    .col-tb-offset-11 {
+        position: relative;
+        left: 55%;
+    }
+
+    .col-tb-offset-12 {
+        position: relative;
+        left: 60%;
+    }
+
+    .col-tb-offset-13 {
+        position: relative;
+        left: 65%;
+    }
+
+    .col-tb-offset-14 {
+        position: relative;
+        left: 70%;
+    }
+
+    .col-tb-offset-15 {
+        position: relative;
+        left: 75%;
+    }
+
+    .col-tb-offset-16 {
+        position: relative;
+        left: 80%;
+    }
+
+    .col-tb-offset-17 {
+        position: relative;
+        left: 85%;
+    }
+
+    .col-tb-offset-18 {
+        position: relative;
+        left: 90%;
+    }
+
+    .col-tb-offset-19 {
+        position: relative;
+        left: 95%;
+    }
+
+    .col-tb-offset-20 {
+        position: relative;
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .col-lt-offset-0 {
+        position: relative;
+        left: 0px;
+    }
+    .col-lt-offset-1 {
+        position: relative;
+        left: 5%;
+    }
+
+    .col-lt-offset-2 {
+        position: relative;
+        left: 10%;
+    }
+
+    .col-lt-offset-3 {
+        position: relative;
+        left: 15%;
+    }
+
+    .col-lt-offset-4 {
+        position: relative;
+        left: 20%;
+    }
+
+    .col-lt-offset-5 {
+        position: relative;
+        left: 25%;
+    }
+
+    .col-lt-offset-6 {
+        position: relative;
+        left: 30%;
+    }
+
+    .col-lt-offset-7 {
+        position: relative;
+        left: 35%;
+    }
+
+    .col-lt-offset-8 {
+        position: relative;
+        left: 40%;
+    }
+
+    .col-lt-offset-9 {
+        position: relative;
+        left: 45%;
+    }
+
+    .col-lt-offset-10 {
+        position: relative;
+        left: 50%;
+    }
+
+    .col-lt-offset-11 {
+        position: relative;
+        left: 55%;
+    }
+
+    .col-lt-offset-12 {
+        position: relative;
+        left: 60%;
+    }
+
+    .col-lt-offset-13 {
+        position: relative;
+        left: 65%;
+    }
+
+    .col-lt-offset-14 {
+        position: relative;
+        left: 70%;
+    }
+
+    .col-lt-offset-15 {
+        position: relative;
+        left: 75%;
+    }
+
+    .col-lt-offset-16 {
+        position: relative;
+        left: 80%;
+    }
+
+    .col-lt-offset-17 {
+        position: relative;
+        left: 85%;
+    }
+
+    .col-lt-offset-18 {
+        position: relative;
+        left: 90%;
+    }
+
+    .col-lt-offset-19 {
+        position: relative;
+        left: 95%;
+    }
+
+    .col-lt-offset-20 {
+        position: relative;
+        left: 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .col-ll-offset-0 {
+        position: relative;
+        left: 0px;
+    }
+    .col-ll-offset-1 {
+        position: relative;
+        left: 5%;
+    }
+
+    .col-ll-offset-2 {
+        position: relative;
+        left: 10%;
+    }
+
+    .col-ll-offset-3 {
+        position: relative;
+        left: 15%;
+    }
+
+    .col-ll-offset-4 {
+        position: relative;
+        left: 20%;
+    }
+
+    .col-ll-offset-5 {
+        position: relative;
+        left: 25%;
+    }
+
+    .col-ll-offset-6 {
+        position: relative;
+        left: 30%;
+    }
+
+    .col-ll-offset-7 {
+        position: relative;
+        left: 35%;
+    }
+
+    .col-ll-offset-8 {
+        position: relative;
+        left: 40%;
+    }
+
+    .col-ll-offset-9 {
+        position: relative;
+        left: 45%;
+    }
+
+    .col-ll-offset-10 {
+        position: relative;
+        left: 50%;
+    }
+
+    .col-ll-offset-11 {
+        position: relative;
+        left: 55%;
+    }
+
+    .col-ll-offset-12 {
+        position: relative;
+        left: 60%;
+    }
+
+    .col-ll-offset-13 {
+        position: relative;
+        left: 65%;
+    }
+
+    .col-ll-offset-14 {
+        position: relative;
+        left: 70%;
+    }
+
+    .col-ll-offset-15 {
+        position: relative;
+        left: 75%;
+    }
+
+    .col-ll-offset-16 {
+        position: relative;
+        left: 80%;
+    }
+
+    .col-ll-offset-17 {
+        position: relative;
+        left: 85%;
+    }
+
+    .col-ll-offset-18 {
+        position: relative;
+        left: 90%;
+    }
+
+    .col-ll-offset-19 {
+        position: relative;
+        left: 95%;
+    }
+
+    .col-ll-offset-20 {
+        position: relative;
+        left: 100%;
+    }
+}

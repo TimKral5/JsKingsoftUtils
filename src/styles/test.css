@@ -1,0 +1,11 @@
+.container {
+    padding: 4%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
